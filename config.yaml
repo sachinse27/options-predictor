@@ -1,0 +1,9 @@
+horizon_days: 3
+p_buy_threshold: 0.6
+p_sell_threshold: 0.4
+symbols:
+- SPY
+- QQQ
+- AAPL
+test_start: '2023-01-01'
+train_start: '2015-01-01'
