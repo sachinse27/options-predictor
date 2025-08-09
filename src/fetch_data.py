@@ -14,7 +14,10 @@ def get_ohlcv(ticker: str, start: str, end: str | None = None) -> pd.DataFrame:
     )
 
     if df is None or df.empty:
-        raise ValueError(f"No data returned for {ticker}")
+        raise ValueError(
+            f"No price data returned for '{ticker}'. "
+            "Check the symbol, or try again later (Yahoo can rate-limit or glitch)."
+        )
 
     # If Yahoo gives MultiIndex columns anyway, flatten them
     if isinstance(df.columns, pd.MultiIndex):
